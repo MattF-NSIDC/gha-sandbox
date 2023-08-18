@@ -1,0 +1,15 @@
+# What does the re-usable workflow see for `${{ github.event }}`?
+name: "Test re-usable workflow event context"
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+*"
+
+
+jobs:
+
+  test-reusable-workflow:
+    uses: "nsidc/.github/.github/workflows/reusable-test.yml@reusable-wf-context-test"
